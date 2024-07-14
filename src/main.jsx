@@ -4,13 +4,18 @@ import Root, {
   loader as rootLoader,
   action as rootAction,
 } from "./routes/root";
+import Home from "./routes/home";
+import Good from "./routes/good";
+import Classic from "./routes/classic";
+import Art from "./routes/art";
+import Jizhiwengao from "./routes/jizhiwengao";
 import ErrorPage from "./error-page";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
-import './index.css'
+// import './index.css'
 import Contact, {
   loader as contactLoader,
   action as contactAction,
@@ -25,6 +30,33 @@ const base = import.meta.env.BASE_URL
 const router = createBrowserRouter([
   {
     path: base,
+    element: <Home />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: base + 'good/',
+        element: <Good />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: base + 'art/',
+        element: <Art />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: base + 'classic/',
+        element: <Classic />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: base + 'jizhiwengao/',
+        element: <Jizhiwengao />,
+        errorElement: <ErrorPage />,
+      },
+    ]
+  },
+  {
+    path: base + 'react/',
     element: <Root />,
     errorElement: <ErrorPage />, 
     loader: rootLoader,
