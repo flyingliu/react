@@ -2,6 +2,7 @@
 import '/@/assets/css/main.scss'
 import { useState, useMemo } from "react";
 import SelectFont from '../components/SelectFont'
+import { print } from '/@/assets/js/util'
 import {
   Button,
   ColorPicker,
@@ -165,7 +166,7 @@ export default function Good () {
               span: 16,
             }}
           >
-            <Button type="primary">
+            <Button type="primary" onClick={print}>
               打印
             </Button>
           </Form.Item>

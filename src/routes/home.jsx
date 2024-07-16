@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 
 import '/@/assets/css/main.scss'
+import '/@/assets/css/home.scss'
 import {  ConfigProvider } from 'antd';
 
 

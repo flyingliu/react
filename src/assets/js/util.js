@@ -26,6 +26,10 @@ export const sortBy = (attr, rev) => {
   }
 }
 
+export function print() {
+  window.print()
+}
+
 export class Cache {
 
   constructor (vm, option = {}) {

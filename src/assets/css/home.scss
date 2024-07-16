@@ -1,0 +1,55 @@
+
+$c: #395260;
+$red: #900;
+sup { font-weight: normal;}
+.index {
+  padding: 40px;
+  display: flex;
+  gap: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.logo {
+  font-size: 40px;
+  color: $red;
+  font-weight: normal;
+}
+a {
+  color: $c;
+  text-decoration: none;
+  &:hover {
+    color: $red;
+  }
+}
+
+.mdl {
+  width: 100%;
+  dd {
+    padding: 0 0 10px 0;
+    &:hover {
+      background-color: #f4f7ff;
+    }
+    h3 {
+      color: $c;
+      &:hover {
+        color: $red;
+      }
+    }
+    p {
+      color: #666;
+      margin: 5px 0;
+    }
+    ul {
+      padding: 5px 0;
+    }
+  }
+}
+.mleft {
+  width: 240px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  p {
+    color: #666;
+  }
+}
