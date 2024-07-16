@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import '/@/assets/css/main.scss'
-
+import {  ConfigProvider } from 'antd';
 
 
 export default function Home () {
@@ -89,7 +89,18 @@ export default function Home () {
           </div>
         ) : (
           <div id="detail">
+              <ConfigProvider
+                theme={{
+                  token: {
+                    // Seed Token，影响范围大
+                    colorPrimary: '#264e70',
+                    borderRadius: 4,
+                    colorBgContainer: '#fff',
+                  },
+                }}
+              >
             <Outlet />
+            </ConfigProvider>
           </div>
         )
       }
