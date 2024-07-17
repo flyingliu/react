@@ -118,6 +118,92 @@ $c: #395260;
             }
         }
     }
+
+    &.art {
+        .td {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(1, 100%);
+            grid-template-rows: repeat(2, 50%);
+            align-items: start;
+        }
+        span {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        a {
+            color: #42b983;
+        }
+    }
+
+    &.classic {
+        $c: #395260;
+        $line: #999;
+        .one {
+            padding: 0px;
+            ul {
+                display: flex;
+                flex: row nowrap;
+            }
+        }
+        .item {
+            border-width: 0.5px;
+            border-style: solid;
+            box-sizing: border-box;
+            position: relative;
+            margin: auto;
+            > div {
+                position: relative;
+                z-index: 9;
+            }
+            &.icon0 {
+                &:nth-child(6n + 1)::before {
+                    content: '\e604';
+                }
+                &:nth-child(6n + 2)::before {
+                    content: '\e604';
+                }
+                &:nth-child(6n + 3)::before {
+                    content: '\e605';
+                }
+                &:nth-child(6n + 4)::before {
+                    content: '\e605';
+                }
+            }
+
+            &.icon1::before {
+                content: '\e604';
+            }
+            &.icon2::before {
+                content: '\e605';
+            }
+            &.icon3::before {
+                content: '\e606';
+            }
+            &::before {
+                font-family: 'iconfont';
+                font-size: 100%;
+                line-height: 1.35;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .one span {
+            border: 0.5px solid #333;
+        }
+        .one span.last {
+            border: 1px solid #333;
+        }
+    }
 }
 
 .layout {
@@ -134,13 +220,6 @@ $c: #395260;
         padding: 20px;
         box-sizing: border-box;
         overflow: auto;
-        .el-form-item {
-            margin-bottom: 10px;
-        }
-        .el-slider__marks-text {
-            margin-top: 3px;
-            font-size: 12px;
-        }
     }
 }
 
