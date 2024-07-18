@@ -44,13 +44,13 @@ export default function Good () {
     }
   }).sort(sortBy('number', true))
   const [contentList, setContentList] = useState(list)
-  const [content, setContent] = useState([contentList[0]])
+  const [content, setContent] = useState([contentList[0], contentList[1]])
   const [icon, setIcon] = useState(ICONLIST[0].value)
-  const [gridcolor, setGridcolor] = useState('#666666')
+  const [gridcolor, setGridcolor] = useState('#900')
 
   const reset = () => {
     contentList.forEach((v) => (v.active = false))
-    setContent([contentList[0]])
+    addText(contentList[0])
   }
   const addText = (item, isAutoPlay) => {
     if (isAutoPlay) {
@@ -71,9 +71,10 @@ export default function Good () {
       width: size + 'cm',
       height: size + 'cm',
       fontSize: size + 'cm',
+      borderColor: gridcolor,
     }
     return { size, item }
-  }, [content])
+  }, [content, gridcolor])
 
 
   return (
@@ -81,7 +82,7 @@ export default function Good () {
       <main className="main">
         <div className="dlone">
           <div className="page">
-            <dl className="con">
+            <dl className="con" style={{ borderColor: gridcolor }}>
               {
                 content.map((v, i) => {
                   return (
