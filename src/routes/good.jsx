@@ -166,9 +166,7 @@ export default function Good () {
               span: 16,
             }}
           >
-            <Button type="primary" onClick={print}>
-              打印
-            </Button>
+            <Button type="primary" onClick={print}>打印</Button>
           </Form.Item>
         </Form>
       </aside>

@@ -84,6 +84,12 @@ export default function Home () {
                       target="_blank"
                     >打印设置</a>
                   </li>
+                  <li>
+                    <a
+                      href="/images/fontset.png"
+                      target="_blank"
+                    >字体设置设置中取不到本机安装的字体? </a>
+                  </li>
                 </ul>
               </dd>
             </dl>

@@ -12,6 +12,8 @@ module.exports = {
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
+    "no-console": 0, //不允许出现console语句
+    "no-extra-semi": 2, //不允许出现不必要的分号
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': [
       'warn',
