@@ -53,18 +53,14 @@ export default function Home () {
   ]
 
   useEffect(() => {
-    if (document.getElementById('bgbox')) {
-      let colorbg = new BlurGradientBg({
-        dom: "bgbox",
-        colors: ["#000000", "#1B1B1B", "#395260", "#3A2152"],
-        loop: true
-      })
-      console.log('%c [colorbg  ]-17', 'font-size:13px; background:pink; color:#bf2c9f;', colorbg)
-    }
-
-
-
- 
+    // if (document.getElementById('bgbox')) {
+    //   let colorbg = new BlurGradientBg({
+    //     dom: "bgbox",
+    //     colors: ["#000000", "#1B1B1B", "#395260", "#3A2152"],
+    //     loop: true
+    //   })
+    //   console.log('%c [colorbg  ]-17', 'font-size:13px; background:pink; color:#bf2c9f;', colorbg)
+    // }
   }, [isHome])
 
 
