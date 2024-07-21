@@ -8,6 +8,10 @@ import '/@/assets/css/main.scss'
 import '/@/assets/css/home.scss'
 import {  ConfigProvider } from 'antd';
 
+import { useEffect } from 'react'
+
+import { BlurGradientBg } from "/@/assets/js/BlurGradientBg.module.js"
+
 
 export default function Home () {
   // 使用useParams钩子获取参数
@@ -40,13 +44,36 @@ export default function Home () {
       desc: '单字临摹',
       icon: '&#xe605;',
     },
+    {
+      path: '/zzwg/',
+      title: '颜真卿争座位稿',
+      desc: '单字临摹',
+      icon: '&#xe605;',
+    },
   ]
+
+  useEffect(() => {
+    if (document.getElementById('bgbox')) {
+      let colorbg = new BlurGradientBg({
+        dom: "bgbox",
+        colors: ["#000000", "#1B1B1B", "#395260", "#3A2152"],
+        loop: true
+      })
+      console.log('%c [colorbg  ]-17', 'font-size:13px; background:pink; color:#bf2c9f;', colorbg)
+    }
+
+
+
+ 
+  }, [isHome])
+
 
   return (
     <div>
       {
         isHome ? (
           <div className="index">
+            <div className="mainBg" id="bgbox"></div>
             <div className="mleft">
               <h3 className="logo iconfont">&#xe611;&#xe607;&#xe608;&#xe610;</h3>
               <p>百日练字 <sup>beta</sup></p>
@@ -96,6 +123,9 @@ export default function Home () {
           </div>
         ) : (
           <div id="detail">
+              <Link className="logo iconfont" to='/'>
+                &#xe611;&#xe607;&#xe608;&#xe610;
+              </Link>
               <ConfigProvider
                 theme={{
                   token: {

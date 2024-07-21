@@ -8,7 +8,9 @@ import Home from "./routes/home";
 import Good from "./routes/good";
 import Classic from "./routes/classic";
 import Art from "./routes/art";
+import Background from "./routes/bg";
 import Jizhiwengao from "./routes/jizhiwengao";
+import Zzwg from "./routes/zzwg";
 import ErrorPage from "./error-page";
 import {
   createBrowserRouter,
@@ -51,6 +53,16 @@ const router = createBrowserRouter([
       {
         path: base + 'jizhiwengao/',
         element: <Jizhiwengao />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: base + 'zzwg/',
+        element: <Zzwg />,
+        errorElement: <Zzwg />,
+      },
+      {
+        path: base + 'background/',
+        element: <Background />,
         errorElement: <ErrorPage />,
       },
     ]

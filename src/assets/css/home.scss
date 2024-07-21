@@ -1,55 +1,76 @@
-
-$c: #395260;
+$c: rgba(255, 255, 255, 1);
+$w: rgba(255, 255, 255, 0.5);
 $red: #900;
-sup { font-weight: normal;}
+sup {
+    font-weight: normal;
+}
 .index {
-  padding: 40px;
-  display: flex;
-  gap: 20px;
-  min-height: 100vh;
-  box-sizing: border-box;
+    padding: 40px;
+    display: flex;
+    gap: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    .mainBg {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background: gray;
+        left: 0;
+        top: 0px;
+        opacity: 1;
+    }
 }
 .logo {
-  font-size: 40px;
-  color: $red;
-  font-weight: normal;
+    font-size: 40px;
+    color: $red;
+    font-weight: normal;
+    text-shadow: $c 2px 2px;
 }
 a {
-  color: $c;
-  text-decoration: none;
-  &:hover {
-    color: $red;
-  }
+    color: $c;
+    text-decoration: none;
+    &:hover {
+        color: $red;
+    }
 }
 
 .mdl {
-  width: 100%;
-  dd {
-    padding: 0 0 10px 0;
-    &:hover {
-      background-color: #f4f7ff;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    dd {
+        padding: 0 0 10px 0;
+        &:hover {
+            h3 {
+                color: $c;
+                opacity: 0.8;
+            }
+            p {
+                color: $w;
+                opacity: 0.8;
+            }
+        }
+        h3 {
+            color: $c;
+        }
+        p {
+            color: $w;
+            margin: 5px 0;
+        }
+        ul {
+            padding: 5px 0;
+        }
     }
-    h3 {
-      color: $c;
-      &:hover {
-        color: $red;
-      }
-    }
-    p {
-      color: #666;
-      margin: 5px 0;
-    }
-    ul {
-      padding: 5px 0;
-    }
-  }
 }
 .mleft {
-  width: 240px;
-  display: flex;
-  justify-content: space-between;
-  flex-flow: column nowrap;
-  p {
-    color: #666;
-  }
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    position: relative;
+    z-index: 1;
+    p {
+        color: $w;
+    }
 }

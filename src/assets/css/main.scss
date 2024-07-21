@@ -4,24 +4,6 @@ $c: #395260;
     align-items: center;
     gap: 10px;
 }
-
-.el-form--label-top {
-    .el-form-item__label {
-        position: relative;
-        padding: 0 0 0px 0;
-        font-weight: bold;
-        &::after {
-            width: 4em;
-            height: 0px;
-            position: absolute;
-            content: '';
-            background: $c;
-            left: 0;
-            bottom: 10px;
-        }
-    }
-}
-
 .subtitle {
     font: 14px/1.6 arial;
     padding-bottom: 10px;
@@ -204,10 +186,16 @@ $c: #395260;
             border: 1px solid #333;
         }
     }
-
-
 }
-
+#detail {
+    .logo {
+        position: absolute;
+        right: 0;
+        font-size: 30px;
+        right: 35px;
+        top: 10px;
+    }
+}
 .layout {
     display: flex;
     .main {
@@ -215,6 +203,7 @@ $c: #395260;
         height: 100vh;
         overflow-y: auto;
     }
+
     .aside {
         background: #eee;
         width: calc(100% - 22cm);
@@ -226,87 +215,92 @@ $c: #395260;
 }
 
 .dlone {
-  width: 100%;
-  height: 100vh;
-
-  .page {
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-flow: column nowrap;
-    align-items: center;
-    overflow: hidden;
-    .con {
-      display: flex;
-      flex-flow: row nowrap;
-    }
-  }
-  .item {
-  border-width: 0.5px;
-  border-style: solid;
-  box-sizing: border-box;
-  position: relative;
-  margin: auto;
-  > div {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
 
-    img {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
+    .page {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-flow: column nowrap;
+        align-items: center;
+        overflow: hidden;
+        .con {
+            display: flex;
+            flex-flow: row nowrap;
+        }
     }
-  }
-  &.icon1::before {
-    content: '\e600';
-  }
-  &.icon2::before {
-    content: '\e601';
-  }
-  &.icon3::before {
-    content: '\e602';
-  }
-  &::before {
-    z-index: 9;
-    font-family: 'iconfont';
-    font-size: 100%;
-    line-height:1;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-  }
-}
+    .item {
+        border-width: 0.5px;
+        border-style: solid;
+        box-sizing: border-box;
+        position: relative;
+        margin: auto;
+        > div {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+
+            img {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+            }
+        }
+        &.icon1::before {
+            content: '\e600';
+        }
+        &.icon2::before {
+            content: '\e601';
+        }
+        &.icon3::before {
+            content: '\e602';
+        }
+        &::before {
+            z-index: 9;
+            font-family: 'iconfont';
+            font-size: 100%;
+            line-height: 1;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 
 .contentList {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 2px;
-  li {
-    border: 1px solid #ccc;
-    width: 22px;
-    height: 22px;
-    display: block;
-    text-align: center;
-    font: 14px/22px arial;
-    cursor: pointer;
-    &.active {
-      background: #333;
-      color: #fff;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2px;
+    li {
+        border: 1px solid #ccc;
+        width: 22px;
+        height: 22px;
+        display: block;
+        text-align: center;
+        font: 14px/22px arial;
+        cursor: pointer;
+        &.active {
+            background: #333;
+            color: #fff;
+        }
     }
-  }
 }
 
 @media print {
+  #detail {
+    .logo {
+      display: none;
+     }
+  }
     .layout {
         display: flex;
         .main {
