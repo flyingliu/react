@@ -10,9 +10,6 @@ import {  ConfigProvider } from 'antd';
 
 import { useEffect } from 'react'
 
-import { BlurGradientBg } from "/@/assets/js/BlurGradientBg.module.js"
-
-
 export default function Home () {
   // 使用useParams钩子获取参数
   const { pathname } = useLocation();
@@ -53,14 +50,14 @@ export default function Home () {
   ]
 
   useEffect(() => {
-    // if (document.getElementById('bgbox')) {
-    //   let colorbg = new BlurGradientBg({
-    //     dom: "bgbox",
-    //     colors: ["#000000", "#1B1B1B", "#395260", "#3A2152"],
-    //     loop: true
-    //   })
-    //   console.log('%c [colorbg  ]-17', 'font-size:13px; background:pink; color:#bf2c9f;', colorbg)
-    // }
+    if (document.getElementById('bgbox')) {
+      let colorbg = new window.Color4Bg.BlurGradientBg({
+        dom: "bgbox",
+        colors: ["#000000", "#1B1B1B", "#395260", "#3A2152"],
+        loop: true
+      })
+      console.log('%c [colorbg  ]-17', 'font-size:13px; background:pink; color:#bf2c9f;', colorbg)
+    }
   }, [isHome])
 
 

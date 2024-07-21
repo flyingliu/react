@@ -46,7 +46,7 @@ export default function Good () {
   const [contentList, setContentList] = useState(list)
   const [content, setContent] = useState([contentList[0], contentList[1]])
   const [icon, setIcon] = useState(ICONLIST[0].value)
-  const [gridcolor, setGridcolor] = useState('#900')
+  const [gridcolor, setGridcolor] = useState('#100')
 
   const reset = () => {
     contentList.forEach((v) => (v.active = false))
