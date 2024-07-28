@@ -3,6 +3,7 @@ import '/@/assets/css/main.scss'
 import { useState, useMemo } from "react";
 import { sortBy } from '/@/assets/js/util'
 import jizhiwengao from '/@/assets/js/zzwg'
+import jijiuzhang from '/@/assets/js/jijiuzhang'
 import {
   Button,
   Select,
@@ -30,20 +31,33 @@ const ICONLIST = [
 ]
 
 const PAGEWIDTH = 18
-const BASE = '//qiniu.easywe.net/shufa/yanzhenqing/zhengzuowei/'
+const list = (data, base) => data.map((v) => {
+  const item = v.split('.')[0].split('_')
+  return {
+    label: item[1],
+    value: v,
+    number: +item[0],
+    httpImg: base + v,
+    active: false,
+  }
+}).sort(sortBy('number', true))
+const ZITIECONFIG = [
+  {
+    label: '祭侄文稿',
+    value: '祭侄文稿',
+    data: list(jizhiwengao, '//qiniu.easywe.net/shufa/yanzhenqing/zhengzuowei/')
+  },
+  {
+    label: '皇象急就章',
+    value: '皇象急就章',
+    data: list(jijiuzhang, '//qiniu.easywe.net/shufa/yanzhenqing/jijiuzhang/')
+  },
+]
 
 export default function Good () {
-  const list = jizhiwengao.map((v) => {
-    const item = v.split('.')[0].split('_')
-    return {
-      label: item[1],
-      value: v,
-      number: +item[0],
-      httpImg: BASE + v,
-      active: false,
-    }
-  }).sort(sortBy('number', true))
-  const [contentList, setContentList] = useState(list)
+
+  const [zitie, setZitie] = useState('祭侄文稿')
+  const [contentList, setContentList] = useState(ZITIECONFIG[0].data)
   const [content, setContent] = useState([contentList[0], contentList[1]])
   const [icon, setIcon] = useState(ICONLIST[0].value)
   const [gridcolor, setGridcolor] = useState('#100')
@@ -128,6 +142,15 @@ export default function Good () {
                 })
               }
             </ul>
+            <hr />
+            <Select
+              defaultValue={zitie}
+              options={ZITIECONFIG}
+              onChange={v => {
+                setContentList(ZITIECONFIG.find(n=>n.value===v).data)
+                setZitie(v)
+              }}
+            />
           </Form.Item>
           <Form.Item label="格子样式">
             <Select
