@@ -147,7 +147,9 @@ export default function Good () {
               defaultValue={zitie}
               options={ZITIECONFIG}
               onChange={v => {
-                setContentList(ZITIECONFIG.find(n=>n.value===v).data)
+                const list = ZITIECONFIG.find(n => n.value === v).data
+                setContentList(list)
+                setContent([list[0], list[1]])
                 setZitie(v)
               }}
             />
