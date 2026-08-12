@@ -30,7 +30,7 @@ const ICONLIST = [
 ]
 
 const PAGEWIDTH = 18
-const BASE = '/data/jizhiwengao/'
+const BASE = import.meta.env.BASE_URL + 'data/jizhiwengao/'
 
 export default function Good () {
   const list = jizhiwengao.map((v) => {
