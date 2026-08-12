@@ -5,7 +5,8 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  // GitHub Pages 项目站点部署到 /react/ 子路径；本地开发仍用 /
+  base: process.env.GITHUB_ACTIONS ? '/react/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
