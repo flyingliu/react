@@ -352,3 +352,11 @@ li {
     padding: 0;
     list-style: none;
 }
+
+.resetBtn {
+  position: fixed;
+  top: 45.8vh;
+  left:20.8cm;
+  cursor: pointer;
+  z-index: 999;
+}

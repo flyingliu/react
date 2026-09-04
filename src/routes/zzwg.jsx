@@ -64,7 +64,7 @@ export default function Good () {
 
   const reset = () => {
     contentList.forEach((v) => (v.active = false))
-    addText(contentList[0])
+    setContent([])
   }
   const addText = (item, isAutoPlay) => {
     if (isAutoPlay) {
@@ -95,6 +95,7 @@ export default function Good () {
     <div className="layout">
       <main className="main">
         <div className="dlone">
+          <div className="resetBtn" onClick={reset}>重置</div>
           <div className="page">
             <dl className="con" style={{ borderColor: gridcolor }}>
               {
