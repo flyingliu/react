@@ -45,12 +45,12 @@ const ZITIECONFIG = [
   {
     label: '祭侄文稿',
     value: '祭侄文稿',
-    data: list(jizhiwengao, '//qiniu.easywe.net/shufa/yanzhenqing/zhengzuowei/')
+    data: list(jizhiwengao, '//img.zhencai.vip/shufa/yanzhenqing/zhengzuowei/')
   },
   {
     label: '皇象急就章',
     value: '皇象急就章',
-    data: list(jijiuzhang, '//qiniu.easywe.net/shufa/yanzhenqing/jijiuzhang/')
+    data: list(jijiuzhang, '//img.zhencai.vip/shufa/yanzhenqing/jijiuzhang/')
   },
 ]
 

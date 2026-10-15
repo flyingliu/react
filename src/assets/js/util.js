@@ -1,10 +1,10 @@
 export const getFontName = (url) => url.split('/').reverse()[0].split('.')[0]
 
 export const familyList = [
-  'https://qiniu.easywe.net/css/fonts/卢中南.woff',
+  'https://img.zhencai.vip/css/fonts/卢中南.woff',
   '/fonts/徐冰.woff',
-  'https://qiniu.easywe.net/css/fonts/毛泽东草书.ttf',
-  'https://qiniu.easywe.net/css/fonts/方正小篆.TTF'
+  'https://img.zhencai.vip/css/fonts/毛泽东草书.ttf',
+  'https://img.zhencai.vip/css/fonts/方正小篆.TTF'
 ]
 
 export const sortBy = (attr, rev) => {
