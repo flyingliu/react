@@ -1,340 +1,417 @@
 $c: #395260;
 .cc {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .subtitle {
-    font: 14px/1.6 arial;
-    padding-bottom: 10px;
-    .uline {
-        content: '';
-        display: inline-block;
-        border-bottom: 3px solid #333;
-    }
+  font: 14px/1.6 arial;
+  padding-bottom: 10px;
+  .uline {
+    content: '';
+    display: inline-block;
+    border-bottom: 3px solid #333;
+  }
 }
 
 .sidelist {
-    text-align: left;
-    li {
-        padding: 0px 20px 20px;
-    }
+  text-align: left;
+  li {
+    padding: 0px 20px 20px;
+  }
 }
 
 .label {
-    padding: 0 0 10px 0;
-    display: inline-block;
+  padding: 0 0 10px 0;
+  display: inline-block;
 }
 
 .dl {
-    padding: 10px;
-    margin: auto;
-    .page {
-        width: 21cm;
-        height: 297mm;
-        page-break-after: always;
-        text-align: center;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
-        margin: 10px auto 30px;
+  padding: 10px;
+  margin: auto;
+  .page {
+    width: 21cm;
+    height: 297mm;
+    page-break-after: always;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+    margin: 10px auto 30px;
 
-        .mheader {
-            max-width: 18.4cm;
-            padding: 0.5cm 0;
-            margin: auto;
-            height: 1.5cm;
-            box-sizing: border-box;
-            h1 {
-                display: none;
-            }
-        }
-        .mfooter {
-            max-width: 18.4cm;
-            margin: auto;
-            padding: 10px 0 0 0;
-            ul {
-                display: flex;
-                font-size: 12px;
-                gap: 10px;
-                justify-content: space-between;
-                &.center {
-                    justify-content: center;
-                }
-            }
-        }
+    .mheader {
+      max-width: 18.4cm;
+      padding: 0.5cm 0;
+      margin: auto;
+      height: 1.5cm;
+      box-sizing: border-box;
+      h1 {
+        display: none;
+      }
     }
+    .mfooter {
+      max-width: 18.4cm;
+      margin: auto;
+      padding: 10px 0 0 0;
+      ul {
+        display: flex;
+        font-size: 12px;
+        gap: 10px;
+        justify-content: space-between;
+        &.center {
+          justify-content: center;
+        }
+      }
+    }
+  }
 }
 
 .con {
-    margin: auto;
-    border-width: 3px;
-    border-style: solid;
-    overflow: hidden;
-    position: relative;
-    display: inline-grid;
-    padding: 10px;
-    grid-gap: 0.2cm 0;
-    li {
+  margin: auto;
+  border-width: 3px;
+  border-style: solid;
+  overflow: hidden;
+  position: relative;
+  display: inline-grid;
+  padding: 10px;
+  grid-gap: 0.2cm 0;
+  li {
+    display: block;
+  }
+  .good {
+    display: grid;
+    direction: rtl;
+    grid-auto-flow: column;
+    padding: 20px;
+    .item {
+      border: 0.5px solid #333;
+    }
+    .last {
+      grid-row-start: 1;
+      border: 1px solid #333;
+      font-size: 0.7em;
+      line-height: 1.4;
+      justify-items: center;
+      align-items: center;
+      display: flex;
+      overflow: hidden;
+      div {
+        margin: auto;
+        justify-content: center;
+        padding: 0 0 2em 0;
+      }
+    }
+  }
+
+  &.art {
+    .td {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, 100%);
+      grid-template-rows: repeat(2, 50%);
+      align-items: start;
+    }
+    span {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    a {
+      color: #42b983;
+    }
+  }
+
+  &.classic {
+    $c: #395260;
+    $line: #999;
+    .one {
+      padding: 0px;
+      ul {
+        display: flex;
+        flex: row nowrap;
+      }
+    }
+    .item {
+      border-width: 0.5px;
+      border-style: solid;
+      box-sizing: border-box;
+      position: relative;
+      margin: auto;
+      > div {
+        position: relative;
+        z-index: 9;
+      }
+      &.icon0 {
+        &:nth-child(6n + 1)::before {
+          content: '\e604';
+        }
+        &:nth-child(6n + 2)::before {
+          content: '\e604';
+        }
+        &:nth-child(6n + 3)::before {
+          content: '\e605';
+        }
+        &:nth-child(6n + 4)::before {
+          content: '\e605';
+        }
+      }
+
+      &.icon1::before {
+        content: '\e604';
+      }
+      &.icon2::before {
+        content: '\e605';
+      }
+      &.icon3::before {
+        content: '\e606';
+      }
+      &::before {
+        font-family: 'iconfont';
+        font-size: 100%;
+        line-height: 1.35;
         display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+      }
     }
-    .good {
-        display: grid;
-        direction: rtl;
-        grid-auto-flow: column;
-        padding: 20px;
-        .item {
-            border: 0.5px solid #333;
-        }
-        .last {
-            grid-row-start: 1;
-            border: 1px solid #333;
-            font-size: 0.7em;
-            line-height: 1.4;
-            justify-items: center;
-            align-items: center;
-            display: flex;
-            overflow: hidden;
-            div {
-                margin: auto;
-                justify-content: center;
-                padding: 0 0 2em 0;
-            }
-        }
+    .one span {
+      border: 0.5px solid #333;
     }
-
-    &.art {
-        .td {
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-columns: repeat(1, 100%);
-            grid-template-rows: repeat(2, 50%);
-            align-items: start;
-        }
-        span {
-            width: 100%;
-            height: 100%;
-            display: block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        a {
-            color: #42b983;
-        }
+    .one span.last {
+      border: 1px solid #333;
     }
-
-    &.classic {
-        $c: #395260;
-        $line: #999;
-        .one {
-            padding: 0px;
-            ul {
-                display: flex;
-                flex: row nowrap;
-            }
-        }
-        .item {
-            border-width: 0.5px;
-            border-style: solid;
-            box-sizing: border-box;
-            position: relative;
-            margin: auto;
-            > div {
-                position: relative;
-                z-index: 9;
-            }
-            &.icon0 {
-                &:nth-child(6n + 1)::before {
-                    content: '\e604';
-                }
-                &:nth-child(6n + 2)::before {
-                    content: '\e604';
-                }
-                &:nth-child(6n + 3)::before {
-                    content: '\e605';
-                }
-                &:nth-child(6n + 4)::before {
-                    content: '\e605';
-                }
-            }
-
-            &.icon1::before {
-                content: '\e604';
-            }
-            &.icon2::before {
-                content: '\e605';
-            }
-            &.icon3::before {
-                content: '\e606';
-            }
-            &::before {
-                font-family: 'iconfont';
-                font-size: 100%;
-                line-height: 1.35;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                margin: auto;
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .one span {
-            border: 0.5px solid #333;
-        }
-        .one span.last {
-            border: 1px solid #333;
-        }
-    }
+  }
 }
 #detail {
-    .logo {
-        position: absolute;
-        right: 0;
-        font-size: 30px;
-        right: 35px;
-        top: 10px;
-    }
+  .logo {
+    position: absolute;
+    right: 0;
+    font-size: 30px;
+    right: 35px;
+    top: 10px;
+  }
 }
 .layout {
-    display: flex;
-    .main {
-        width: 22cm;
-        height: 100vh;
-        overflow-y: auto;
-    }
+  display: flex;
+  .main {
+    width: 22cm;
+    height: 100vh;
+    overflow-y: auto;
+  }
 
-    .aside {
-        background: #eee;
-        width: calc(100% - 22cm);
-        height: 100vh;
-        padding: 20px;
-        box-sizing: border-box;
-        overflow: auto;
-    }
+  .aside {
+    background: #eee;
+    width: calc(100% - 22cm);
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+  }
 }
 
 .dlone {
+  width: 100%;
+  height: 100vh;
+
+  .page {
     width: 100%;
     height: 100vh;
-
-    .page {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        flex-flow: column nowrap;
-        align-items: center;
-        overflow: hidden;
-        .con {
-            display: flex;
-            flex-flow: row nowrap;
-        }
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    overflow: hidden;
+    .con {
+      display: flex;
+      flex-flow: row nowrap;
     }
-    .item {
-        border-width: 0.5px;
-        border-style: solid;
-        box-sizing: border-box;
+  }
+  .item {
+    border-width: 0.5px;
+    border-style: solid;
+    box-sizing: border-box;
+    position: relative;
+    margin: auto;
+    > div {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+
+      img {
         position: relative;
-        margin: auto;
-        > div {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-
-            img {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                display: block;
-            }
-        }
-        &.icon1::before {
-            content: '\e600';
-        }
-        &.icon2::before {
-            content: '\e601';
-        }
-        &.icon3::before {
-            content: '\e602';
-        }
-        &::before {
-            z-index: 9;
-            font-family: 'iconfont';
-            font-size: 100%;
-            line-height: 1;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            margin: auto;
-            width: 100%;
-            height: 100%;
-        }
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
     }
+    &.icon1::before {
+      content: '\e600';
+    }
+    &.icon2::before {
+      content: '\e601';
+    }
+    &.icon3::before {
+      content: '\e602';
+    }
+    &::before {
+      z-index: 9;
+      font-family: 'iconfont';
+      font-size: 100%;
+      line-height: 1;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 .contentList {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 2px;
-    li {
-        border: 1px solid #ccc;
-        width: 22px;
-        height: 22px;
-        display: block;
-        text-align: center;
-        font: 14px/22px arial;
-        cursor: pointer;
-        &.active {
-            background: #333;
-            color: #fff;
-        }
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2px;
+  li {
+    border: 1px solid #ccc;
+    width: 22px;
+    height: 22px;
+    display: block;
+    text-align: center;
+    font: 14px/22px arial;
+    cursor: pointer;
+    &.active {
+      background: #333;
+      color: #fff;
     }
+  }
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  #app {
+    min-width: auto;
+  }
+
+  .layout {
+    flex-direction: column;
+
+    .main {
+      width: 100%;
+      height: auto;
+      min-height: 50vh;
+    }
+
+    .aside {
+      width: 100%;
+      height: auto;
+      max-height: 50vh;
+      overflow-y: auto;
+    }
+  }
+
+  .dl {
+    padding: 5px;
+    .page {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 5px auto 15px;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+
+      .mheader {
+        max-width: 90%;
+        padding: 0.3cm 0;
+      }
+
+      .mfooter {
+        max-width: 90%;
+        padding: 5px 0 0 0;
+      }
+
+      .con {
+        padding: 5px;
+        overflow-x: auto;
+      }
+    }
+  }
+
+  /* dlone 样式适配 - 用于 jizhiwengao 和 zzwg 页面 */
+  .dlone {
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+    position: relative;
+
+    .page {
+      &.goodpage {
+        width: 100%;
+        height: auto;
+        min-height: 50vh;
+        padding: 10px;
+        box-sizing: border-box;
+
+        .con {
+          width: 100%;
+          overflow-x: auto;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+          justify-content: center;
+        }
+      }
+    }
+  }
 }
 
 @media print {
   #detail {
     .logo {
       display: none;
-     }
-  }
-    .layout {
-        display: flex;
-        .main {
-            width: 100%;
-            text-align: center;
-            height: unset;
-        }
-        .aside {
-            display: none;
-        }
     }
-    .dl {
-        padding: 0;
-        margin: auto;
-        .page {
-            border-bottom: 0px solid #000;
-            box-shadow: unset;
-            page-break-after: always;
-            margin: 0;
-        }
+  }
+  .layout {
+    display: flex;
+    .main {
+      width: 100%;
+      text-align: center;
+      height: unset;
     }
     .aside {
-        display: none;
+      display: none;
     }
+  }
+  .dl {
+    padding: 0;
+    margin: auto;
+    .page {
+      border-bottom: 0px solid #000;
+      box-shadow: unset;
+      page-break-after: always;
+      margin: 0;
+    }
+  }
+  .aside {
+    display: none;
+  }
 }
 
 #app {
-    min-width: 1200px;
+  min-width: 1200px;
 }
 /* unset */
 body,
 html {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 h1,
 h2,
@@ -342,21 +419,21 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
+  margin: 0;
 }
 dl,
 dd,
 ul,
 li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .resetBtn {
   position: fixed;
   top: 45.8vh;
-  left:20.8cm;
+  left: 20.8cm;
   cursor: pointer;
   z-index: 999;
 }

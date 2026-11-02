@@ -61,7 +61,7 @@ export default function Good () {
         <dl className="dl">
           {
             mycontent.map((page, n) => (
-              <dd className="page" key={n} style={{ color: fontcolor }}>
+              <dd className="page goodpage" key={n} style={{ color: fontcolor }}>
                 <header className="mheader">
                   <h1>书法练习</h1>
                 </header>
