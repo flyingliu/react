@@ -48,8 +48,8 @@ export default function Good () {
     let reg = /\p{Unified_Ideograph}/gu
     let len = row * col
     return arr.filter(Boolean).map((item) => {
-      let itemArr = item.match(reg)
-      return itemArr.length >= len
+      let itemArr = item.match(reg) || []
+      return itemArr?.length >= len
         ? itemArr.splice(0, len)
         : [...itemArr, ...Array(len - itemArr.length).fill('')]
     })
