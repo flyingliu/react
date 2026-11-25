@@ -44,7 +44,7 @@ export default function Good () {
   const [gridcolor, setGridcolor] = useState('#000000')
 
   const mycontent = useMemo(() => {
-    let arr = content.split('\n')
+    let arr = content.split('\n\n\n')
     let reg = /\p{Unified_Ideograph}/gu
     let len = row * col
     return arr.filter(Boolean).map((item) => {

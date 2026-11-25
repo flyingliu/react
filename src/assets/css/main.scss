@@ -30,13 +30,12 @@ $c: #395260;
   padding: 10px;
   margin: auto;
   .page {
-    width: 21cm;
     height: 297mm;
     page-break-after: always;
     text-align: center;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
     margin: 10px auto 30px;
-
+    padding: 0 10px;
     .mheader {
       max-width: 18.4cm;
       padding: 0.5cm 0;
@@ -199,18 +198,18 @@ $c: #395260;
 .layout {
   display: flex;
   .main {
-    width: 22cm;
     height: 100vh;
     overflow-y: auto;
   }
 
   .aside {
     background: #eee;
-    width: calc(100% - 22cm);
     height: 100vh;
     padding: 20px;
     box-sizing: border-box;
     overflow: auto;
+    flex: auto;
+    min-width: 400px;
   }
 }
 
